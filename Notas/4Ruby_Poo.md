@@ -25,10 +25,10 @@ class Persona
     end
 end
 
-# creacion de objetos
+# Creacion de objeto
 persona1 = Persona.new("Maria")
 
-# puedo llamar al publico
+# Puedo llamar al metodo publico
 persona1.saludar
 
 # dará error porque solo puede ser llamado dentro de la clase
@@ -39,5 +39,4 @@ persona1.secreto
 > - privados, solo se pueden usar dentro de la clase
 > - publicos, normal
 > - protegidos, solo el objeto y otros pueden usarlo
-> <br>
 
