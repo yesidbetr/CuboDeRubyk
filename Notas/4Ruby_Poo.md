@@ -1,6 +1,11 @@
 # POO
 
 ## Clases
+> Los métodos son acciones que un objeto puede hacer, se definen en 
+> - **Privados**, solo se pueden usar dentro de la clase, y sin el prefijo self.
+> - **Publicos**, son los por defecto, se peuden llamar desde fuera de la clase.
+> - **Protegidos**, solo el objeto y otros pueden usarlo, pero dentro de la clase
+
 ```ruby
 class Persona
     def initialize(nombre)
@@ -15,7 +20,7 @@ class Persona
     # método privado
     private
     def secreto
-        puts "soy un metodo privado"
+        "soy un metodo privado"
     end
 
     # método protegido
@@ -23,20 +28,72 @@ class Persona
     def mostrar_nombre
         puts @nombre
     end
+
+    # ejemplo al llamado del método secreto
+    public
+    def llamado_secreto
+        puts "hola " + secreto
+    end
 end
 
-# Creacion de objeto
+# creacion de objetos
 persona1 = Persona.new("Maria")
 
-# Puedo llamar al metodo publico
+# puedo llamar al publico
 persona1.saludar
 
-# dará error porque solo puede ser llamado dentro de la clase
+# dará error porque solo puede ser llamado dentro de la clase, probarlo y luego comentarlo
 persona1.secreto
+
+# ahora si va a funcionar
+persona1.llamado_secreto
 ```
 
-> Los métodos son acciones que un objeto puede hacer, se definen en 
-> - privados, solo se pueden usar dentro de la clase
-> - publicos, normal
-> - protegidos, solo el objeto y otros pueden usarlo
+## Herencia
+```ruby
+# Clase base o padre
+class Vehiculo
+  def initialize(marca)
+    @marca = marca
+  end
 
+  def mostrar_marca
+    puts "Este vehículo es de la marca: #{@marca}"
+  end
+end
+
+# Clase hija que hereda de Vehiculo
+class Auto < Vehiculo
+  def encender_motor
+    puts "El motor del auto está encendido."
+  end
+end
+
+# Creamos una instancia de Auto, que es una subclase de Vehiculo
+mi_auto = Auto.new("Toyota")
+# Llamamos a un método propio de la clase Auto
+mi_auto.encender_motor
+# Llamamos a un método heredado de la clase Vehiculo
+mi_auto.mostrar_marca
+```
+
+## Modulos
+```ruby
+module Habilidades
+    def correr
+        puts "está corriendo"
+    end
+end
+
+class Persona
+
+    include Habilidades
+    
+    def initialize(nombre)
+        @nombre = nombre
+    end
+end
+
+persona = Persona.new("Juan")
+persona.correr
+```
