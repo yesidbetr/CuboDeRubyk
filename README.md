@@ -1,1 +1,1 @@
-# CuboDeRubyk
+# Cubo de Rubyk
