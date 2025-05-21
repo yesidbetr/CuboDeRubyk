@@ -98,7 +98,8 @@ persona = Persona.new("Juan")
 persona.correr
 ```
 
-## Attr_reader, attr_writer, attr_accesor
+## Attr_reader, attr_writer, attr_accessor
+Los attr siempre van antes que cualquier método, al principio de la clase.
 > - ``attr_reader`` es un método para lectura (get)
 > - `attr_writer` es un método para escritura (set)
 > - `attr_accessor` es un getter y setter.
