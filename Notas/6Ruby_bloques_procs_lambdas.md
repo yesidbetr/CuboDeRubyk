@@ -26,7 +26,8 @@ end
 ```
 
 ## Procesos
-Los procesos me encapsulan un bloque.<br>
+> Los procesos me encapsulan un bloque.
+
 Ejemplo1
 ```ruby
 mi_proc = Proc.new {
