@@ -1,3 +1,17 @@
+# Manejo de excepcioens
+
+## Bloque begin/rescue/ensure
+```ruby
+begin
+    # código que puede lanzar un error
+rescue
+    # código que se ejecuta si se produce un error
+ensure
+    # código que se ejecuta siempre, haya o no error
+end
+```
+### Ejemplo
+```ruby
 def dividir(a,b)
     begin 
         resultado = a/b
@@ -12,3 +26,4 @@ def dividir(a,b)
 end
 
 puts dividir(10,0)
+```
